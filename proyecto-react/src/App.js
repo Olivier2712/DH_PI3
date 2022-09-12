@@ -1,15 +1,24 @@
-import './App.css';
+import React from 'react'
+import {Route, Switch} from 'react-router-dom'
 
+import './App.css';
+import Header from './components/Header/Header';
+import Home from './pages/Home/Home';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <>
-          <h1> "Proyecto React"</h1>
-          <h2> By: La leyenda de la cebolla </h2>
-        </>
-      </header>
-    </div>
+  <>     
+    <Header titulo= "Music4you" subtitulo="Lo que tus oidos quieren escuchar"/>
+    <Switch>
+          <Route path="/" exact  >
+            <Home />
+            </Route>
+          {/* <Route path="/about" component={Characters} />
+          <Route path="/characters/id/:id" component={CharacterDetails} />
+          <Route path="/contact" component={Contact}/>
+          <Route component={NotFound}/> */}
+        </Switch>
+      {/* <Footer />  */}
+  </>
   );
 }
 
