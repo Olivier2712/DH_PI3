@@ -15,17 +15,17 @@ import Card from '../../components/Card/Card';
   }
 
  componentDidMount(){
-  console.log(this.state.favoritos)
+  console.log(this.state.favoritos)  
   this.setState({favoritos: JSON.parse(localStorage.getItem('favoritos')) || []})
     const url = "https://api.themoviedb.org/3/tv/top_rated?api_key=c0945689b0a582e110971301d6ea8be2&language=es"
     fetch(url)
         .then((res)=> res.json())
-        .then(datos =>{
+        .then(datos =>{ 
             console.log(datos)
              return this.setState({
             cargando: true,
             peliculas: datos.results,
-            nexturl: datos.info.next
+            // nexturl: datos.info.next
         })})
         .catch( err => console.log(err)
     )
@@ -107,24 +107,24 @@ import Card from '../../components/Card/Card';
       </form>
 
       <button className='btn btn-primary mb-3 mt-3' onClick={() => this.agregarMas()}>Mas Prsonajes</button>
-
+      
       <div className='card-container'>
       {
         this.state.cargando === false ? (
           <p>Cargando</p>
         ):
-        (this.state.personajes.map(personaje =>(
-            <Card
-              key={personaje.id}
-              personaje={personaje}
-              borrar={(personajeBorrar) => this.borrarTarjeta(personajeBorrar)}
-              favorito={(personaje) => this.handleFavoritos(personaje)}
+        (this.state.peliculas.map(pelicula =>(
+            <Card 
+              key={pelicula.id} 
+              personaje={pelicula}
+              borrar={(peliculaBorrar) => this.borrarTarjeta(peliculaBorrar)}
+              favorito={(pelicula) => this.handleFavoritos(pelicula)}
             />)
         ))
         }
     </div>
-</>
-    )
+</>    
+    ) 
   }
 }
 export default Characters
