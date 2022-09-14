@@ -5,6 +5,7 @@ import './Nav.css'
 
 export default function Nav() {
   return (
+
 <nav className="navbar navbar-expand-lg bg-light">
   <div className="container-fluid">
       <ul className="navbar-nav">
@@ -18,6 +19,8 @@ export default function Nav() {
           <Link className="nav-link" to="/vertodas">Ver todas </Link>
         </li>
       </ul>
+
+    
     </div>
 
 </nav>

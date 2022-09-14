@@ -7,13 +7,13 @@ import Home from './pages/Home/Home';
 function App() {
   return (
   <>     
-    <Header titulo= "Music4you" subtitulo="Lo que tus oidos quieren escuchar"/>
+    <Header titulo= "Movies4you" subtitulo="Lo que tus ojos quieren ver"/>
     <Switch>
           <Route path="/" exact  >
             <Home />
             </Route>
-          {/* <Route path="/about" component={Characters} />
-          <Route path="/characters/id/:id" component={CharacterDetails} />
+          {/* <Route path="/" component={Characters} /> */}
+          {/* <Route path="/characters/id/:id" component={CharacterDetails} />
           <Route path="/contact" component={Contact}/>
           <Route component={NotFound}/> */}
         </Switch>
