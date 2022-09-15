@@ -7,7 +7,7 @@ import './Nav.css'
 export default function Nav() {
   return (
 
-<nav className="navbar navbar-expand-lg bg-light">
+<nav className="navbar navbar-expand-lg" style={{backgroundColor:"lightcyan"}}>
   <div className="container-fluid">
       <ul className="navbar-nav">
         {links.map(link => (

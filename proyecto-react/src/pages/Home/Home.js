@@ -97,16 +97,6 @@ class Characters extends Component {
     return (
       <>
 
-        <form>
-          <label >Buscar</label>
-          <input
-            type="search"
-            name="buscar"
-            onChange={(e) => { this.handleChange(e) }}
-            value={this.state.filterBy}
-          />
-        </form>
-
         <button className='btn btn-primary mb-3 mt-3' onClick={() => this.agregarMas()}>Mas Prsonajes</button>
 
         <div className='card-container'>
