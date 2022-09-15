@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Card.css";
 import {Link} from 'react-router-dom'
+import { getMouseEventOptions } from '@testing-library/user-event/dist/utils';
 
 
 function Card(props) {
@@ -14,7 +15,7 @@ const vermas = () => {
 
   return (
 <div className="character-card mb-4">
-      <img src={poster_path} alt={name} />
+      <img src={"https://image.tmdb.org/t/p/w500"+ pelicula.backdrop_path} alt={pelicula.path} />
       <h4>{name}</h4>
       {/* <p>Status: {status}</p>
       <p>Genero: {gender}</p> */}
