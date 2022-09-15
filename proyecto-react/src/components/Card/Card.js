@@ -15,7 +15,7 @@ const vermas = () => {
 
   return (
 <div className="character-card mb-4">
-      <img src={"https://image.tmdb.org/t/p/w500"+ pelicula.backdrop_path} alt={pelicula.path} />
+      <img src={poster_path} alt={name} />
       <h4>{name}</h4>
       {/* <p>Status: {status}</p>
       <p>Genero: {gender}</p> */}
@@ -23,7 +23,7 @@ const vermas = () => {
         <button className="btn btn-primary" onClick={()=>{props.favorito(props.personaje)}} >Favoritos</button>
         <button className="btn btn-danger" onClick={()=>props.borrar(id)} >Borrar</button>
         <button className="btn btn-info" onClick={vermas}>Ver Mas</button>
-        <Link to={`/movies/id/${id}`} className="btn btn-warning" >Detalle</Link>
+        <Link to={`/characters/id/${id}`} className="btn btn-warning" >Detalle</Link>
       </div>
 </div>
   )
