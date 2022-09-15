@@ -13,7 +13,7 @@ const vermas = () => {
 
   return (
 <div className="character-card mb-4">
-      <img src={poster_path} alt={name}/>
+      <img src={poster_path} alt={name} file_type=".jpg"/>
       <h4>{name}</h4>
       {/* <p>Status: {status}</p>
       <p>Genero: {gender}</p> */}
