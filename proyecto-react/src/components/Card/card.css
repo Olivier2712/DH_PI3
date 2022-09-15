@@ -1,13 +1,11 @@
-.characters-card {
-    padding: 10px;
-    margin-bottom: 20px;
-    width: 25%;
-    background-color: #fff;
-    border-radius: 5px;
-  }
-  
-  .characters-card img {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
+.movie-card{
+  background-color:blueviolet;
+  margin: 5px;
+}
+
+
+.nombre {
+text-align: center;
+font-family:Impact;
+
+}

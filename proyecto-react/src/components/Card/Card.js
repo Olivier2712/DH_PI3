@@ -5,25 +5,24 @@ import { getMouseEventOptions } from '@testing-library/user-event/dist/utils';
 
 
 function Card(props) {
-let {name, id, poster_path } = props.personaje
+let {name, id, poster_path } = props.pelicula
 
 
 
 const vermas = () => {
-  //console.log("vermas")
-}
+ //console.log("vermas")
+ }
 
   return (
-<div className="character-card mb-4">
+<div className='movie-card'>
       <img src={poster_path} alt={name} />
-      <h4>{name}</h4>
-      {/* <p>Status: {status}</p>
-      <p>Genero: {gender}</p> */}
+      <h4 className='nombre'>{name}</h4>
+    
       <div className='d-flex justify-content-end'>
-        <button className="btn btn-primary" onClick={()=>{props.favorito(props.personaje)}} >Favoritos</button>
+        <button className="btn btn-primary" onClick={()=>{props.favorito(props.pelicula)}} >Favoritos</button>
         <button className="btn btn-danger" onClick={()=>props.borrar(id)} >Borrar</button>
         <button className="btn btn-info" onClick={vermas}>Ver Mas</button>
-        <Link to={`/characters/id/${id}`} className="btn btn-warning" >Detalle</Link>
+        <Link to={`/movies/id/${id}`} className="btn btn-warning" >Detalle</Link>
       </div>
 </div>
   )

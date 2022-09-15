@@ -32,66 +32,66 @@ class Characters extends Component {
       )
   }
 
-  //  agregarMas() {
-  //   // Logica para agregar mas personajes
-  //   const url = this.state.nexturl;
-  //   fetch(url)
-  //     .then( res => res.json())
-  //     .then( data => {
-  //       console.log(data)
-  //       this.setState({
-  //         nexturl: data.info.next,
-  //         personajes: this.state.personajes.concat(data.results)
-  //       })
-  //     .catch( err => console.log(err))
-  //     })
-  //  }
+    agregarMas() {
+     // Logica para agregar mas peliculas
+     const url = this.state.nexturl;
+     fetch(url)
+       .then( res => res.json())
+       .then( data => {
+         console.log(data)
+         this.setState({
+           nexturl: data.info.next,
+           peliculas: this.state.peliculas.concat(data.results)
+         })
+       .catch( err => console.log(err))
+       })
+    }
 
-  //  filtrarPersonajes(filtro){
-
-
+    filtrarpeliculas(filtro){
 
 
-  //     const url = `https://rickandmortyapi.com/api/character/?name=${filtro}`
-  //     fetch(url)
-  //         .then((res)=> res.json())
-  //         .then(datos =>{
-  //             //console.log(datos)
-  //             this.setState({personajes: datos.results})
 
-  //         })
-  //         .catch( err => console.log(err))
-  //  }
 
-  //  handleChange(e){
-  //   this.setState({
-  //     filterBy: e.target.value
-  //   },()=>{
-  //     this.filtrarPersonajes(this.state.filterBy)
-  //   })
-  //  }
+       const url = `https://rickandmortyapi.com/api/character/?name=${filtro}`
+       fetch(url)
+           .then((res)=> res.json())
+           .then(datos =>{
+               //console.log(datos)
+               this.setState({peliculas: datos.results})
 
-  // borrarTarjeta(id) {
-  //   const resto = this.state.personajes.filter( personaje => personaje.id !== id)
-  //   this.setState({
-  //     personajes: resto
-  //   })
-  // }
+           })
+           .catch( err => console.log(err))
+    }
 
-  // handleFavoritos(card){
-  //   if(this.state.favoritos.some(fav => card.id === fav.id)){
-  //   // texto agregar a favoritos
-  //   this.setState({favoritos: this.state.favoritos.filter( item => item.id !== card.id)}, ()=>{
-  //     localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
-  //     // texto quitar de favoritos
-  //   })
-  //   console.log(this.state.favoritos.filter( item => item.id !== card.id))
-  //   }else {
-  //     this.setState({favoritos: [...this.state.favoritos, card]}, ()=>{
-  //     localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
-  //     // texto quitar de favoritos
-  //   })}
-  // }
+    handleChange(e){
+    this.setState({
+       filterBy: e.target.value
+     },()=>{
+       this.filtrarpeliculas(this.state.filterBy)
+     })
+    }
+
+   borrarTarjeta(id) {
+     const resto = this.state.peliculas.filter( pelicula => pelicula.id !== id)
+     this.setState({
+       peliculas: resto
+     })
+   }
+
+   handleFavoritos(card){
+     if(this.state.favoritos.some(fav => card.id === fav.id)){
+     // texto agregar a favoritos
+     this.setState({favoritos: this.state.favoritos.filter( item => item.id !== card.id)}, ()=>{
+       localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
+       // texto quitar de favoritos
+     })
+     console.log(this.state.favoritos.filter( item => item.id !== card.id))
+     }else {
+       this.setState({favoritos: [...this.state.favoritos, card]}, ()=>{
+       localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
+       // texto quitar de favoritos
+     })}
+   }
 
   render() {
     return (
@@ -107,7 +107,7 @@ class Characters extends Component {
               (this.state.peliculas.map(pelicula => (
                 <Card
                   key={pelicula.id}
-                  personaje={pelicula}
+                  pelicula={pelicula}
                   borrar={(peliculaBorrar) => this.borrarTarjeta(peliculaBorrar)}
                   favorito={(pelicula) => this.handleFavoritos(pelicula)}
                 />)
