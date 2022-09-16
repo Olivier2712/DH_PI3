@@ -15,10 +15,10 @@ const vermas = () => {
 
   return (
 <div className='movie-card'>
-      <img src={poster_path} alt={name} />
+      <img src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={name} />
       <h4 className='nombre'>{name}</h4>
     
-      <div className='d-flex justify-content-end'>
+      <div className='d-flex'>
         <button className="btn btn-primary" onClick={()=>{props.favorito(props.pelicula)}} >Favoritos</button>
         <button className="btn btn-danger" onClick={()=>props.borrar(id)} >Borrar</button>
         <button className="btn btn-info" onClick={vermas}>Ver Mas</button>

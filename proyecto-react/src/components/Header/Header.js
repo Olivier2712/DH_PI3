@@ -9,10 +9,9 @@ const Header = ({titulo, subtitulo}) => {
 
         <div className="header">
             <h1 className="text-center">{titulo}</h1>
-            <h2 className="text-center">{subtitulo}</h2>
+            <h4 className="text-center">{subtitulo}</h4>
 
             <Nav/>
-            <Buscador> buscador </Buscador>
         </div>
         
         

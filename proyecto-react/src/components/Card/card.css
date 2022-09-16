@@ -1,6 +1,7 @@
 .movie-card{
-  background-color:blueviolet;
-  margin: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  flex-wrap: wrap;
 }
 
 
@@ -8,4 +9,23 @@
 text-align: center;
 font-family:Impact;
 
+}
+
+.movie-card img {
+  align-items: center;
+  width: 230px;
+  margin-bottom: 20px;
+  height: 76%;
+  border-radius: 16px;
+  margin:inherit;
+  height: auto;
+}
+
+.d-flex {
+  align-self: center;
+  width: inherit;
+}
+
+.nombre{
+  align-self: left;
 }
