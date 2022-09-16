@@ -97,7 +97,7 @@ class Characters extends Component {
     return (
       <>
 
-        <button className='btn btn-primary mb-3 mt-3' onClick={() => this.agregarMas()}>Mas Prsonajes</button>
+        
 
         <div className='card-container'>
           {

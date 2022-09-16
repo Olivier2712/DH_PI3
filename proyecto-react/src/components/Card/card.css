@@ -1,9 +1,88 @@
 .movie-card{
   margin-left: 10px;
   margin-right: 10px;
-  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.btn_fav{
+  background-color: white;
+  border-radius: 7%;
+  color: rgb(3, 0, 0);
+  padding: 2,5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin-bottom:4%;
+  transition-duration: 0.4s;
+  border-color:#d9dc11;
+  margin: 3px;
+}
+.btn_fav:hover{
+  background-color: #d9dc11;
+  font-weight:900;
+  color: rgb(255, 255, 255);
 }
 
+.btn_vermas{
+  background-color: white;
+  border-radius: 7%;
+  color: rgb(3, 0, 0);
+  padding: 2,5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin-bottom:4%;
+  transition-duration: 0.4s;
+  border-color:#54df0e;
+  margin: 3px;
+}
+.btn_vermas:hover{
+  background-color:#54df0e;
+  font-weight:900;
+  color: rgb(255, 255, 255);
+}
+
+.btn_borrar{
+  background-color: white;
+  border-radius: 7%;
+  color: rgb(3, 0, 0);
+  padding: 2,5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin-bottom:4%;
+  transition-duration: 0.4s;
+  border-color:#df0e0e;
+  margin: 3px;
+}
+.btn_borrar:hover{
+  background-color:#df0e0e;
+  font-weight:900;
+  color: rgb(255, 255, 255);
+}
+
+.btn_detalle{
+  background-color: white;
+  border-radius: 7%;
+  color: rgb(3, 0, 0);
+  padding: 2,5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin-bottom:4%;
+  transition-duration: 0.4s;
+  border-color:blue;
+  margin: 3px;
+}
+.btn_detalle:hover{
+
+  background-color:blue;
+  font-weight:900;
+  color: rgb(255, 255, 255);
+}
 
 .nombre {
 text-align: center;
@@ -11,21 +90,18 @@ font-family:Impact;
 
 }
 
-.movie-card img {
-  align-items: center;
-  width: 230px;
+.img_card {
+  border-style:solid;
+  text-align: center;
+  width: 320px;
   margin-bottom: 20px;
   height: 76%;
   border-radius: 16px;
-  margin:inherit;
-  height: auto;
+;
 }
 
-.d-flex {
-  align-self: center;
-  width: inherit;
-}
 
 .nombre{
   align-self: left;
 }
+

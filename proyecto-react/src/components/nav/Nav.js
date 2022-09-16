@@ -7,6 +7,7 @@ import './Nav.css'
 export default function Nav() {
   return (
 
+<div>    
 <nav className="navbar navbar-expand-lg" style={{backgroundColor:"lightcyan", borderRadius:"15px", marginBottom:"10px"}}>
   <div className="container-fluid">
       <ul className="navbar-nav">
@@ -21,5 +22,8 @@ export default function Nav() {
     </div>
 
 </nav>
+
+</div>
+
   )
 }
