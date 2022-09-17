@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import {withRouter} from "react-router-dom";
+import Card from "../../components/Card/Card";
 
 class Detalle extends React.Component{
     constructor(){
@@ -34,6 +35,15 @@ class Detalle extends React.Component{
                             titulo: data.name,
                             detalleDePelicula: data.overview,
                             foto: `https://image.tmdb.org/t/p/original${data.backdrop_path}`,
+                            califiacion: data.popularity,
+                            fechaDeEstreno: data.first_air_date,
+                            duracion: data.episode_run_time,
+                            sinapsis: data.overview,
+                            genero: data.genres.name,
+                            
+
+                    
+
 
                         }, 
                     })
@@ -48,8 +58,9 @@ class Detalle extends React.Component{
     render(){
         return(
             <div>
-                <h1>Detalle de la pelicula{this.state.pelicula.titulo}</h1>
+                <h1>{this.state.pelicula.titulo}</h1>
                 <img src={this.state.pelicula.foto} height={136} width={136} /> 
+                <h2>Calificacion: {this.state.pelicula.califiacion}</h2>
             </div>
         )
 
