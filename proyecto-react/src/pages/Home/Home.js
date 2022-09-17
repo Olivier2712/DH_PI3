@@ -30,12 +30,9 @@ class Characters extends Component {
       .catch(err => {
         console.log(err)
       })
-  }
-
-  componentDidMount() {
-    this.setState({ favoritos: JSON.parse(localStorage.getItem('favoritos')) || [] })
-    const url = "https://api.themoviedb.org/3/tv/top_rated?api_key=c0945689b0a582e110971301d6ea8be2&language=es"
-    fetch(url)
+      this.setState({ favoritos: JSON.parse(localStorage.getItem('favoritos')) || [] })
+    const url2 = "https://api.themoviedb.org/3/tv/top_rated?api_key=c0945689b0a582e110971301d6ea8be2&language=es"
+    fetch(url2)
       .then((res) => res.json())
         .then(datos => {
           return this.setState({
