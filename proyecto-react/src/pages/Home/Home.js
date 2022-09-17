@@ -107,7 +107,7 @@ class Characters extends Component {
                 />)
               )
             ) : (
-              <Loader/>
+              <Loader></Loader>
             )
           }
         </div>
