@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Card from '../../components/Card/Card';
+import Loader from '../../components/Loader/Loader';
 
 class Characters extends Component {
 
   constructor() {
     super();
     this.state = {
-      cargando: false,
+      estaCargado: false,
       peliculas: [],
       filterBy: '',
       nexturl: "",
@@ -15,21 +16,19 @@ class Characters extends Component {
   }
 
   componentDidMount() {
-    console.log(this.state.favoritos)
     this.setState({ favoritos: JSON.parse(localStorage.getItem('favoritos')) || [] })
     const url = "https://api.themoviedb.org/3/tv/top_rated?api_key=c0945689b0a582e110971301d6ea8be2&language=es"
     fetch(url)
       .then((res) => res.json())
-      .then(datos => {
-        console.log(datos)
-        return this.setState({
-          cargando: true,
-          peliculas: datos.results,
-          // nexturl: datos.info.next
+        .then(datos => {
+          return this.setState({
+            estaCargado: true,
+            peliculas: datos.results,
+          })
         })
+      .catch(err => {
+        console.log(err)
       })
-      .catch(err => console.log(err)
-      )
   }
 
     agregarMas() {
@@ -96,22 +95,20 @@ class Characters extends Component {
   render() {
     return (
       <>
-
-        
-
         <div className='card-container'>
           {
-            this.state.cargando === false ? (
-              <p>Cargando</p>
-            ) :
-              (this.state.peliculas.map(pelicula => (
+            this.state.estaCargado ? (
+              this.state.peliculas.map(pelicula => (
                 <Card
                   key={pelicula.id}
                   pelicula={pelicula}
                   borrar={(peliculaBorrar) => this.borrarTarjeta(peliculaBorrar)}
                   favorito={(pelicula) => this.handleFavoritos(pelicula)}
                 />)
-              ))
+              )
+            ) : (
+              <Loader/>
+            )
           }
         </div>
       </>

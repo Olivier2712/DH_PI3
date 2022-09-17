@@ -1,16 +1,19 @@
 import React from 'react'
-import "./Card.css";
-import { Link } from 'react-router-dom'
+import "./card.css";
+import { Link, Redirect, useHistory } from 'react-router-dom'
 import { getMouseEventOptions } from '@testing-library/user-event/dist/utils';
 
 
 function Card(props) {
   let { name, id, poster_path } = props.pelicula
 
-
+  const history = useHistory()
 
   const vermas = () => {
     //console.log("vermas")
+  }
+  function handleOnClick(){
+    history.push("/peliculas/detalle/"+id)
   }
 
   return (
@@ -22,7 +25,7 @@ function Card(props) {
         <button className="btn_fav" onClick={() => { props.favorito(props.pelicula) }} >Favoritos</button>
         <button className="btn_borrar" onClick={() => props.borrar(id)} >Borrar</button>
         <button className="btn_vermas" onClick={vermas}>Ver Mas</button>
-        <button to={`/movies/id/${id}`} className="btn_detalle" >Detalle</button>
+        <button onClick={handleOnClick} className="btn_detalle" >Detalle</button>
       </div>
     </div>
   )

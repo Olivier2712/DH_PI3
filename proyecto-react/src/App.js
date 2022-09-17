@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound/Notfound'
 import Favoritos from './pages/Favoritos/Favoritos'
 import VerTodas from './pages/Ver_todas/VerTodas'
 import Footer from './components/Footer/Footer'
+import Detalle from './pages/Detalles/Detalle';
 
 function App() {
   return (
@@ -16,8 +17,10 @@ function App() {
       <Switch>
         <Route path="/" exact> <Home /> </Route>
         <Route path="/Favoritos"> <Favoritos/> </Route>
+        <Route path="/Peliculas/Detalle/:peliculaId"><Detalle/></Route>
         <Route path="/VerTodas"> <VerTodas/> </Route>
         <Route path="*"> < NotFound/> </Route>
+        
 
 
         {/* <Route path="/" component={Characters} /> */}
