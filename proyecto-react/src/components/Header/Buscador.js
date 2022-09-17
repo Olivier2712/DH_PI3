@@ -1,9 +1,11 @@
+import buscador from '../Header/buscador.css'
 const Buscador = () => {
     return (
         <div style={{alignSelf:"baseline"}}>
-        <form>
-          <label style={{backgroundColor:"blue", borderRadius:"10px"}}>Buscar</label>
+        <form className='form_buscar'>
+          <label className="label_buscar">Buscar</label>
           <input
+          className='busqueda'
             type="search"
             name="buscar"
             /* onChange={(e) => { this.handleChange(e) }} */

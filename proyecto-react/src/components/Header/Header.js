@@ -9,7 +9,7 @@ const Header = ({titulo, subtitulo}) => {
 
         <div className="header">
             <h1 className="text-center">{titulo}</h1>
-
+            <Buscador/>
             <Nav/>
         </div>
         
