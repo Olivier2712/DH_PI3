@@ -95,7 +95,7 @@ class Characters extends Component {
   render() {
     return (
       <>
-        <div className='card-container'>
+        <div className='card-container' style={{backgroundColor:"lightcyan"}}>
           {
             this.state.estaCargado ? (
               this.state.peliculas.map(pelicula => (

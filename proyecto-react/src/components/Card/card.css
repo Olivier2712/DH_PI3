@@ -4,12 +4,13 @@
   margin-top: 30px;
   border-style:inset;
   padding-left: 10px;
+  background-color: black;
 }
 
 .btn_fav{
-  background-color: white;
+  background-color:#d9dc11;
   border-radius: 7%;
-  color: rgb(3, 0, 0);
+  color: rgb(255, 255, 255);
   padding: 2,5px 5px;
   text-align: center;
   text-decoration: none;
@@ -27,9 +28,9 @@
 }
 
 .btn_vermas{
-  background-color: white;
+  background-color:#54df0e;
   border-radius: 7%;
-  color: rgb(3, 0, 0);
+  color: rgb(255, 255, 255);
   padding: 2,5px 5px;
   text-align: center;
   text-decoration: none;
@@ -47,9 +48,9 @@
 }
 
 .btn_borrar{
-  background-color: white;
+  background-color:#df0e0e;
   border-radius: 7%;
-  color: rgb(3, 0, 0);
+  color: white;
   padding: 2,5px 5px;
   text-align: center;
   text-decoration: none;
@@ -67,9 +68,9 @@
 }
 
 .btn_detalle{
-  background-color: white;
+  background-color:blue;
   border-radius: 7%;
-  color: rgb(3, 0, 0);
+  color: white;
   padding: 2,5px 5px;
   text-align: center;
   text-decoration: none;
@@ -90,6 +91,7 @@
 .nombre {
 text-align: center;
 font-family:Impact;
+color: white;
 
 }
 
