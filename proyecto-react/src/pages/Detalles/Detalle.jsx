@@ -10,6 +10,14 @@ class Detalle extends React.Component{
             pelicula: {
                 detalleDePelicula: "",
                 foto:"",
+                titulo:"",
+                califiacion:"",
+                fechaDeEstreno:"",
+                duracion:"",
+                sinapsis:"",
+                genero:"",
+                favoritos:[],
+
             }
         }
     }
