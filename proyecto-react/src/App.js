@@ -13,7 +13,7 @@ import Detalle from './pages/Detalles/Detalle';
 function App() {
   return (
     <>
-      <Header titulo="Movies4you" subtitulo="Lo que tus ojos quieren ver" />
+      <Header titulo="Cuevana Salteña" subtitulo="La mejor plataforma de streaming del milenio" />
       <Switch>
         <Route path="/" exact> <Home /> </Route>
         <Route path="/Favoritos"> <Favoritos/> </Route>
@@ -21,12 +21,6 @@ function App() {
         <Route path="/VerTodas"> <VerTodas/> </Route>
         <Route path="*"> < NotFound/> </Route>
         
-
-
-        {/* <Route path="/" component={Characters} /> */}
-        {/* <Route path="/characters/id/:id" component={CharacterDetails} />
-          <Route path="/contact" component={Contact}/>
-          <Route component={NotFound}/> */}
       </Switch>
       <Footer />
     </>
