@@ -9,10 +9,27 @@ class Characters extends Component {
     this.state = {
       estaCargado: false,
       peliculas: [],
+      series:[],
       filterBy: '',
       nexturl: "",
       favoritos: [],
     };
+  }
+
+  componentDidMount() {
+    this.setState({ favoritos: JSON.parse(localStorage.getItem('favoritos')) || [] })
+    const url = "https://api.themoviedb.org/3/movie/top_rated?api_key=c0945689b0a582e110971301d6ea8be2&language=es"
+    fetch(url)
+      .then((res) => res.json())
+        .then(datos => {
+          return this.setState({
+            estaCargado: true,
+            peliculas: datos.results,
+          })
+        })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   componentDidMount() {
@@ -23,7 +40,7 @@ class Characters extends Component {
         .then(datos => {
           return this.setState({
             estaCargado: true,
-            peliculas: datos.results,
+            series: datos.results,
           })
         })
       .catch(err => {
