@@ -5,6 +5,8 @@
   border-style:inset;
   padding-left: 10px;
   background-color: black;
+  width: 20%;
+  justify-content: space-between;
 }
 
 .btn_fav{
@@ -99,7 +101,7 @@ color: white;
   margin-top: 10px;
   border-style:solid;
   text-align: center;
-  width: 320px;
+  width: 270px;
   margin-bottom: 20px;
   height: 76%;
   border-radius: 16px;
