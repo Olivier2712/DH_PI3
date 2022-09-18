@@ -7,8 +7,7 @@ import { converterCategoriaId } from '../../pages/Detalles/categoriaIdTool';
 
 
 function Card(props) {
-  let { name, title, id, poster_path, overview } = props.contenido
-  const categoria = props.categoria
+  let { name, title, id, poster_path, overview, categoria } = props.contenido
   const collapseId = "collapse"+id
   const history = useHistory()
 

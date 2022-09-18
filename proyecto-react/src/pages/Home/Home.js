@@ -25,9 +25,10 @@ class Home extends Component {
     fetch(url)
       .then((res) => res.json())
       .then(datos => {
+        const listaDeContenidos = datos.results.map(contenido => ({...contenido,categoria: categoria.MOVIE}))
         return this.setState({
           estaCargado: true,
-          contenidos: datos.results.slice(0,4), // Profesores: el .slice(0,4) lo saque de una discusion en tmdb ya que no sabia como limitar el contenido que devolvia. (https://www.themoviedb.org/talk/623012ed357c00001b46ae10)
+          contenidos: listaDeContenidos.slice(0,4), // Profesores: el .slice(0,4) lo saque de una discusion en tmdb ya que no sabia como limitar el contenido que devolvia. (https://www.themoviedb.org/talk/623012ed357c00001b46ae10)
         })
       })
       .catch(err => {
@@ -38,9 +39,10 @@ class Home extends Component {
     fetch(url2)
       .then((res) => res.json())
       .then(datos => {
+        const listaDeContenidos = datos.results.map(contenido => ({...contenido,categoria: categoria.TV}))
         return this.setState({
           estaCargado: true,
-          series: datos.results.slice(0,4),
+          series: listaDeContenidos.slice(0,4),
         })
       })
       .catch(err => {
@@ -128,7 +130,6 @@ class Home extends Component {
                 <Card
                   key={contenido.id}
                   contenido={contenido}
-                  categoria={categoria.MOVIE}
                   borrar={(contenidoBorrar) => this.borrarTarjeta(contenidoBorrar)}
                   favorito={(contenido) => this.handleFavoritos(contenido)}
                 />)
@@ -148,7 +149,6 @@ class Home extends Component {
                 <Card
                   key={contenido.id}
                   contenido={contenido}
-                  categoria={categoria.TV}
                   borrar={(contenidoBorrar) => this.borrarTarjeta(contenidoBorrar)}
                   favorito={(contenido) => this.handleFavoritos(contenido)}
                 />)
