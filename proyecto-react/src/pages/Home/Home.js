@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Redirect, withRouter } from 'react-router-dom';
 import Card from '../../components/Card/Card';
 import Loader from '../../components/Loader/Loader';
-import categoria from '../../utils/categoria';
+import categoria from '../../pages/Detalles/categoria';
 
 class Home extends Component {
 

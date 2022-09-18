@@ -2,7 +2,7 @@ import React from 'react'
 import "./card.css";
 import { Link, Redirect, useHistory } from 'react-router-dom'
 import { getMouseEventOptions } from '@testing-library/user-event/dist/utils';
-import { converterCategoriaId } from '../../utils/categoriaIdTool';
+import { converterCategoriaId } from '../../pages/Detalles/categoriaIdTool';
 
 
 

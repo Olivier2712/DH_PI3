@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import {withRouter} from "react-router-dom";
 import "./Detalle.css";
 import BotonFav from "../../components/BotonFav/BotonFav";
-import { decodeCategoriaId } from "../../utils/categoriaIdTool";
+import { decodeCategoriaId } from "../../pages/Detalles/categoriaIdTool";
 
 
 class Detalle extends React.Component{
@@ -86,7 +86,7 @@ class Detalle extends React.Component{
                 <h2 className='duracion-detalle' >Duracion: {this.state.contenido.duracion}</h2>
                 <h2 className='sinapsis-titulo'> Sinapsis:</h2> <h2 className='sinapsis-detalle' > {this.state.contenido.sinapsis}</h2>
                 <h2 className='genero-detalle' >Generos: </h2>
-                <ul>
+                <ul className="ul-detalle">
                     {this.state.contenido.generos.map(genero => <li>{genero}</li>)}
                 </ul>
                 <BotonFav/>
