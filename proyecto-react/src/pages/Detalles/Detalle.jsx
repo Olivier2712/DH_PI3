@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import {withRouter} from "react-router-dom";
 import "./Detalle.css";
+import BotonFav from "../../components/BotonFav/BotonFav";
 
 class Detalle extends React.Component{
     constructor(){
@@ -55,6 +56,22 @@ class Detalle extends React.Component{
             console.log(this.state.contenido)
     }
 
+    handleFavoritos(card) {
+        if (this.state.favoritos.some(fav => card.id === fav.id)) {
+          // texto agregar a favoritos
+          this.setState({ favoritos: this.state.favoritos.filter(item => item.id !== card.id) }, () => {
+            localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
+            // texto quitar de favoritos
+          })
+          console.log(this.state.favoritos.filter(item => item.id !== card.id))
+        } else {
+          this.setState({ favoritos: [...this.state.favoritos, card] }, () => {
+            localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
+            // texto quitar de favoritos
+          })
+        }
+      }
+
     render(){
         return(
             <div className='detalle' >
@@ -65,6 +82,7 @@ class Detalle extends React.Component{
                 <h2 className='duracion-detalle' >Duracion: {this.state.contenido.duracion}</h2>
                 <h2 className='sinapsis-titulo'> Sinapsis:</h2> <h2 className='sinapsis-detalle' > {this.state.contenido.sinapsis}</h2>
                 <h2 className='genero-detalle' >Genero: {this.state.contenido.genero}</h2>
+                <BotonFav/>
             </div>
         )
 
