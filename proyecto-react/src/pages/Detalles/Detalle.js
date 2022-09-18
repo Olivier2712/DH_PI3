@@ -1,5 +1,4 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import {withRouter} from "react-router-dom";
 import "./Detalle.css";
 import BotonFav from "../../components/BotonFav/BotonFav";

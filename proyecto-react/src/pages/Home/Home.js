@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Redirect, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Card from '../../components/Card/Card';
 import Loader from '../../components/Loader/Loader';
 import categoria from '../../pages/Detalles/categoria';
+
 
 class Home extends Component {
 
@@ -67,7 +68,7 @@ class Home extends Component {
 
 
 
-    const url = `https://rickandmortyapi.com/api/character/?name=${filtro}`
+    const url = `${filtro}`
     fetch(url)
       .then((res) => res.json())
       .then(datos => {
@@ -95,6 +96,7 @@ class Home extends Component {
 
   handleFavoritos(card) {
     if (this.state.favoritos.some(fav => card.id === fav.id)) {
+      
       // texto agregar a favoritos
       this.setState({ favoritos: this.state.favoritos.filter(item => item.id !== card.id) }, () => {
         localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
@@ -102,6 +104,7 @@ class Home extends Component {
       })
       console.log(this.state.favoritos.filter(item => item.id !== card.id))
     } else {
+
       this.setState({ favoritos: [...this.state.favoritos, card] }, () => {
         localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
         // texto quitar de favoritos
@@ -118,7 +121,7 @@ class Home extends Component {
       <section className='contenido_desplegado' style={{display:"flex", flexDirection:"column"}} >
         <div className='card-container_peli' style={{ backgroundColor: "lightcyan" }}>
         <h1 style={{width:"80%", paddingLeft:"30%", fontFamily:'monospace'}}>P E L I C U L A S </h1> 
-        <button className="btn_vermas" onClick={this.handleOnClickRedirecToVerTodas}>Ver todas</button>
+        <Link className="btn_vermas" to={"/VerTodas/"+categoria.MOVIE}>Ver todas</Link>
           {
             this.state.estaCargado ? (
               this.state.contenidos.map(contenido => (
@@ -138,6 +141,7 @@ class Home extends Component {
 
         <div className='card-container_serie' style={{ backgroundColor: "lightcyan" }}>
         <h1 style={{width:"100%", paddingLeft:"40%", fontFamily:'monospace'}}>S E R I E S</h1>
+        <Link className="btn_vermas" to={"/VerTodas/"+categoria.TV}>Ver todas</Link>
           {
             this.state.estaCargado ? (
               this.state.series.map(contenido => (

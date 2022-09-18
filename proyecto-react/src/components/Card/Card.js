@@ -1,10 +1,7 @@
 import React from 'react'
 import "./card.css";
 import { Link, Redirect, useHistory } from 'react-router-dom'
-import { getMouseEventOptions } from '@testing-library/user-event/dist/utils';
 import { converterCategoriaId } from '../../pages/Detalles/categoriaIdTool';
-import { Collapse } from 'react-bootstrap';
-import AccordionBody from 'react-bootstrap/esm/AccordionBody';
 
 
 
