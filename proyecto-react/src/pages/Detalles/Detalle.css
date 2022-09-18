@@ -1,0 +1,62 @@
+
+
+.nombre-detalle{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    border-style:inset;
+    padding-left: 10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+
+.img-detalle {
+    margin-top: 10px;
+    border-style:solid;
+    text-align: center;
+    width: 520px;
+    margin-bottom: 20px;
+    height: 76%;
+    border-radius: 16px;
+
+  }
+  
+.calificacion-detalle{
+    text-align: center;
+    font-family:Impact;
+    color: black;
+    text-decoration: underline;
+}
+
+.estreno-detalle{
+    text-align: center;
+    font-family:Impact;
+    color: black;
+    text-decoration: underline;
+}
+.duracion-detalle{
+    text-align: center;
+    font-family:Impact;
+    color: black;
+    text-decoration: underline;
+}
+
+.sinapsis-titulo{
+    text-align: center;
+    font-family:Impact;
+    color: black;
+    text-decoration: underline;
+}
+
+.sinapsis-detalle{
+    text-align: center;
+    font-family: Arial;
+    color: rgb(45, 41, 41);
+}
+.genero-detalle{
+    text-align: center;
+    font-family:Impact;
+    color: black;
+    text-decoration: underline;
+}

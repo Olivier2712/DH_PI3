@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import {withRouter} from "react-router-dom";
-import Card from "../../components/Card/Card";
+import "./Detalle.css";
 
 class Detalle extends React.Component{
     constructor(){
@@ -57,14 +57,14 @@ class Detalle extends React.Component{
 
     render(){
         return(
-            <div>
-                <h1>{this.state.pelicula.titulo}</h1>
-                <img src={this.state.pelicula.foto} height={136} width={136} /> 
-                <h2>Calificacion: {this.state.pelicula.califiacion}</h2>
-                <h2>Fecha de estreno: {this.state.pelicula.fechaDeEstreno}</h2>
-                <h2>Duracion: {this.state.pelicula.duracion}</h2>
-                <h2>Sinapsis: {this.state.pelicula.sinapsis}</h2>
-                <h2>Genero: {this.state.pelicula.genero}</h2>
+            <div className="detalle">
+                <h1 className='nombre-detalle'>{this.state.pelicula.titulo}</h1>
+                <img className="img-detalle" src={this.state.pelicula.foto}  /> 
+                <h2 className='calificacion-detalle' >Calificacion: {this.state.pelicula.califiacion}</h2>
+                <h2 className='estreno-detalle' >Fecha de estreno: {this.state.pelicula.fechaDeEstreno}</h2>
+                <h2 className='duracion-detalle' >Duracion: {this.state.pelicula.duracion}</h2>
+                <h2 className='sinapsis-titulo'>Sinapsis:</h2> <h2 className='sinapsis-detalle' >{this.state.pelicula.sinapsis}</h2>
+                <h2 className='duracion-detalle' >Genero: {this.state.pelicula.genero}</h2>
             </div>
         )
 
