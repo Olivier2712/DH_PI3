@@ -5,7 +5,7 @@ import { getMouseEventOptions } from '@testing-library/user-event/dist/utils';
 
 
 function Card(props) {
-  let { name, id, poster_path } = props.pelicula
+  let { name, title, id, poster_path } = props.contenido
 
   const history = useHistory()
 
@@ -13,16 +13,16 @@ function Card(props) {
     //console.log("vermas")
   }
   function handleOnClick(){
-    history.push("/peliculas/detalle/"+id)
+    history.push("/contenidos/detalle/"+id)
   }
 
   return (
     <div className='movie-card'>
       <img className="img_card"src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={name} />
-      <h4 className='nombre'>{name}</h4>
+      <h4 className='nombre'>{name} {title}</h4>
 
       <div className='botones'>
-        <button className="btn_fav" onClick={() => { props.favorito(props.pelicula) }} >Favoritos</button>
+        <button className="btn_fav" onClick={() => { props.favorito(props.contenido) }} >Favoritos</button>
         <button className="btn_borrar" onClick={() => props.borrar(id)} >Borrar</button>
         <button className="btn_vermas" onClick={vermas}>Ver Mas</button>
         <button onClick={handleOnClick} className="btn_detalle" >Detalle</button>

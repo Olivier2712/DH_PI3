@@ -1,8 +1,18 @@
-.card-container{
+.card-container_peli{
     background-color:rgb(255, 255, 255);
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
+    align-items: center;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
 }
+
+.card-container_serie{
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+

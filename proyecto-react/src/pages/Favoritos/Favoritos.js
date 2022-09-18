@@ -19,7 +19,7 @@ class Favoritos extends Component {
         {this.state.favoritos.map( item => (
             <Card 
                 key={item.id}
-                pelicula={item}
+                contenido={item}
             />
         ))}
       </div>
