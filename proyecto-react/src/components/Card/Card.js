@@ -12,7 +12,7 @@ import AccordionBody from 'react-bootstrap/esm/AccordionBody';
 function Card(props) {
   let { name, title, id, poster_path, overview } = props.contenido
   const categoria = props.categoria
-
+  const collapseId = "collapse"+id
   const history = useHistory()
 
   const vermas = () => {
@@ -34,11 +34,11 @@ function Card(props) {
         <div className="accordion" id="accordionExample">
           <div className="accordion-item" style={{marginRight:"10px"}}>
             <h2 className="accordion-header" id="headingOne">
-              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style={{backgroundColor:"#54df0e", color:"white", fontSize:"large", fontWeight:"bold"}}>
+              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={"#"+collapseId} aria-expanded="true" aria-controls="collapseOne" style={{backgroundColor:"#54df0e", color:"white", fontSize:"large", fontWeight:"bold"}}>
                 Sinopsis
               </button>
             </h2>
-            <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id={collapseId} className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
               <div className="accordion-body" style={{background:"black", color:"white", fontWeight:"bold"}}>
               {overview}
               </div>
