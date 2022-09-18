@@ -9,6 +9,7 @@ import Favoritos from './pages/Favoritos/Favoritos'
 import VerTodas from './pages/VerTodas/VerTodas'
 import Footer from './components/Footer/Footer'
 import Detalle from './pages/Detalles/Detalle';
+import Search from './pages/Search/Search';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/Favoritos"> <Favoritos/> </Route>
         <Route path="/contenidos/Detalle/:contenidoId"><Detalle/></Route>
         <Route path="/VerTodas/:categoria"> <VerTodas/> </Route>
+        <Route path="/Search/:consulta"> <Search/> </Route>
         <Route path="*"> < NotFound/> </Route>
         
       </Switch>
