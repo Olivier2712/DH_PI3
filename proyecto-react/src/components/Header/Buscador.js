@@ -1,7 +1,7 @@
 import buscador from '../Header/buscador.css'
 const Buscador = () => {
     return (
-        <div style={{alignSelf:"baseline"}}>
+        <div style={{display:"flex"}}>
         <form className='form_buscar'>
           <label className="label_buscar">Buscar</label>
           <input

@@ -18,7 +18,7 @@ function App() {
         <Route path="/" exact> <Home /> </Route>
         <Route path="/Favoritos"> <Favoritos/> </Route>
         <Route path="/contenidos/Detalle/:contenidoId"><Detalle/></Route>
-        <Route path="/VerTodas"> <VerTodas/> </Route>
+        <Route path="/VerTodas/:categoria"> <VerTodas/> </Route>
         <Route path="*"> < NotFound/> </Route>
         
       </Switch>

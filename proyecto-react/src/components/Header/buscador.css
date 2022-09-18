@@ -13,4 +13,6 @@
     border-radius: 10px;
 }
 
-
+.form_buscar{
+    display: flex;
+}

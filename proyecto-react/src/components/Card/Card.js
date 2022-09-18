@@ -2,10 +2,13 @@ import React from 'react'
 import "./card.css";
 import { Link, Redirect, useHistory } from 'react-router-dom'
 import { getMouseEventOptions } from '@testing-library/user-event/dist/utils';
+import { converterCategoriaId } from '../../utils/categoriaIdTool';
+
 
 
 function Card(props) {
   let { name, title, id, poster_path } = props.contenido
+  const categoria= props.categoria
 
   const history = useHistory()
 
@@ -13,7 +16,8 @@ function Card(props) {
     //console.log("vermas")
   }
   function handleOnClick(){
-    history.push("/contenidos/detalle/"+id)
+    const categoriaId = converterCategoriaId(categoria, id)
+    history.push("/contenidos/detalle/"+categoriaId)
   }
 
   return (

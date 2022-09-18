@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { Redirect, withRouter } from 'react-router-dom';
 import Card from '../../components/Card/Card';
 import Loader from '../../components/Loader/Loader';
+import categoria from '../../utils/categoria';
 
-class Characters extends Component {
+class Home extends Component {
 
   constructor() {
     super();
@@ -24,7 +26,7 @@ class Characters extends Component {
       .then(datos => {
         return this.setState({
           estaCargado: true,
-          contenidos: datos.results,
+          contenidos: datos.results.slice(0,4), // Profesores: el .slice(0,4) lo saque de una discusion en tmdb ya que no sabia como limitar el contenido que devolvia. (https://www.themoviedb.org/talk/623012ed357c00001b46ae10)
         })
       })
       .catch(err => {
@@ -37,7 +39,7 @@ class Characters extends Component {
       .then(datos => {
         return this.setState({
           estaCargado: true,
-          series: datos.results,
+          series: datos.results.slice(0,4),
         })
       })
       .catch(err => {
@@ -106,18 +108,24 @@ class Characters extends Component {
       })
     }
   }
+ handleOnClickRedirecToVerTodas (){
+    this.props.history.push('/Favoritos')
+  }
+
 
   render() {
     return (
       <section className='contenido_desplegado' style={{display:"flex", flexDirection:"column"}} >
         <div className='card-container_peli' style={{ backgroundColor: "lightcyan" }}>
-          <h1 style={{width:"100%", paddingLeft:"45%"}}>Peliculas</h1>
+        <h1 style={{width:"80%", paddingLeft:"30%", fontFamily:'monospace'}}>P E L I C U L A S </h1> 
+        <button className="btn_vermas" onClick={this.handleOnClickRedirecToVerTodas}>Ver todas</button>
           {
             this.state.estaCargado ? (
               this.state.contenidos.map(contenido => (
                 <Card
                   key={contenido.id}
                   contenido={contenido}
+                  categoria={categoria.MOVIE}
                   borrar={(contenidoBorrar) => this.borrarTarjeta(contenidoBorrar)}
                   favorito={(contenido) => this.handleFavoritos(contenido)}
                 />)
@@ -129,13 +137,14 @@ class Characters extends Component {
         </div>
 
         <div className='card-container_serie' style={{ backgroundColor: "lightcyan" }}>
-        <h1 style={{width:"100%", paddingLeft:"45%"}}>Series</h1>
+        <h1 style={{width:"100%", paddingLeft:"40%", fontFamily:'monospace'}}>S E R I E S</h1>
           {
             this.state.estaCargado ? (
               this.state.series.map(contenido => (
                 <Card
                   key={contenido.id}
                   contenido={contenido}
+                  categoria={categoria.TV}
                   borrar={(contenidoBorrar) => this.borrarTarjeta(contenidoBorrar)}
                   favorito={(contenido) => this.handleFavoritos(contenido)}
                 />)
@@ -149,4 +158,4 @@ class Characters extends Component {
     )
   }
 }
-export default Characters
+export default withRouter(Home)

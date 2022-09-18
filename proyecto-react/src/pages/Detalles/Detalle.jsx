@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import {withRouter} from "react-router-dom";
 import "./Detalle.css";
 import BotonFav from "../../components/BotonFav/BotonFav";
+import { decodeCategoriaId } from "../../utils/categoriaIdTool";
+
 
 class Detalle extends React.Component{
     constructor(){
@@ -17,7 +19,7 @@ class Detalle extends React.Component{
                 fechaDeEstreno:"",
                 duracion:"",
                 sinapsis:"",
-                genero:"",
+                generos:[],
                 favoritos:[],
 
             }
@@ -26,7 +28,9 @@ class Detalle extends React.Component{
 
     componentDidMount (){
         const contenidoId = this.props.match.params.contenidoId
-        const url =  `https://api.themoviedb.org/3/tv/${contenidoId}?api_key=c0945689b0a582e110971301d6ea8be2&language=es`
+        const decodeContenidoId= decodeCategoriaId(contenidoId)
+        const url =  `https://api.themoviedb.org/3/${decodeContenidoId.categoriaName}/${decodeContenidoId.id}?api_key=c0945689b0a582e110971301d6ea8be2&language=es`
+
         fetch(url)
             .then(response => response.json()
                 .then(data => {
@@ -37,10 +41,10 @@ class Detalle extends React.Component{
                             detalleDecontenido: data.overview,
                             foto: `https://image.tmdb.org/t/p/original${data.backdrop_path}`,
                             califiacion: data.popularity,
-                            fechaDeEstreno: data.first_air_date,
-                            duracion: data.episode_run_time,
+                            fechaDeEstreno: data.first_air_date || data.release_date,
+                            duracion: data.episode_run_time? data.episode_run_time + 'Episodios' : data.runtime + 'Minutos',
                             sinapsis: data.overview,
-                            genero: data.genres.name,
+                            generos: data.genres.map(genre => genre.name),
                             
 
                     
@@ -81,7 +85,10 @@ class Detalle extends React.Component{
                 <h2 className='estreno-detalle' >Fecha de estreno: {this.state.contenido.fechaDeEstreno}</h2>
                 <h2 className='duracion-detalle' >Duracion: {this.state.contenido.duracion}</h2>
                 <h2 className='sinapsis-titulo'> Sinapsis:</h2> <h2 className='sinapsis-detalle' > {this.state.contenido.sinapsis}</h2>
-                <h2 className='genero-detalle' >Genero: {this.state.contenido.genero}</h2>
+                <h2 className='genero-detalle' >Generos: </h2>
+                <ul>
+                    {this.state.contenido.generos.map(genero => <li>{genero}</li>)}
+                </ul>
                 <BotonFav/>
             </div>
         )
