@@ -120,10 +120,12 @@ class Home extends Component {
 
   render() {
     return (
-      <section className='contenido_desplegado' style={{display:"flex", flexDirection:"column"}} >
-        <div className='card-container_peli' style={{ backgroundColor: "lightcyan" }}>
+      <section className='contenido_desplegado' style={{display:"flex", flexDirection:"column", width:"100%"}} >
+        <div className='contenedor_titulo_y_boton' style={{widht:"100%", display:"flex", backgroundColor:"lightcyan"}}>
         <h1 style={{width:"80%", paddingLeft:"30%", fontFamily:'monospace'}}>P E L I C U L A S </h1> 
-        <Link className="btn_vermas" to={"/VerTodas/"+categoria.MOVIE}>Ver todas</Link>
+        <Link className="btn_vermas" to={"/VerTodas/"+categoria.MOVIE} style={{widht:"20%"}}>Ver todas</Link>
+        </div>
+        <div className='card-container_peli' style={{ backgroundColor: "lightcyan", width:"100%", display:"flex"}}>
           {
             this.state.estaCargado ? (
               this.state.contenidos.map(contenido => (
@@ -139,10 +141,12 @@ class Home extends Component {
             )
           }
         </div>
-
+        <div className='contenedor_titulo_y_boton' style={{widht:"100%", display:"flex", backgroundColor:"lightcyan"}}>
+        <h1 style={{width:"80%", paddingLeft:"40%", fontFamily:'monospace'}}>S E R I E S</h1>
+        <Link className="btn_vermas" to={"/VerTodas/"+categoria.TV} style={{widht:"20%"}}>Ver todas</Link>
+        </div>
         <div className='card-container_serie' style={{ backgroundColor: "lightcyan" }}>
-        <h1 style={{width:"100%", paddingLeft:"40%", fontFamily:'monospace'}}>S E R I E S</h1>
-        <Link className="btn_vermas" to={"/VerTodas/"+categoria.TV}>Ver todas</Link>
+        
           {
             this.state.estaCargado ? (
               this.state.series.map(contenido => (
