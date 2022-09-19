@@ -94,12 +94,12 @@ class VerTodas extends React.Component {
       <div>
         <section className='contenido_desplegado' style={{ display: "flex", flexDirection: "row" }} >
           <div className='card-container_peli' style={{ backgroundColor: "#556380", display: "flex", flexDirection: "row", flexWrap: 'wrap' }}>
-            <h1 style={{ fontFamily: 'impact', color:"white" }}>{this.titulo}</h1>
+            <h1 style={{ fontFamily: 'impact', color: "white" }}>{this.titulo}</h1>
             <div style={{ display: "flex", width: "100%", }}>
               <form className="form_vermas">
                 <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onChange={this.handleChange_masPopulares} checked={this.state.masPopulares}/>
-                  <label class="form-check-label" for="flexSwitchCheckDefault" style={{fontFamily: 'impact', color:"white", fontSize:"large"}}>Mas populares</label>
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onChange={this.handleChange_masPopulares} checked={this.state.masPopulares} />
+                  <label class="form-check-label" for="flexSwitchCheckDefault" style={{ fontFamily: 'impact', color: "white", fontSize: "large" }}>Mas populares</label>
                 </div>
 
               </form>

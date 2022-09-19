@@ -1,123 +1,125 @@
-.movie-card{
+.movie-card {
   display: flex;
   flex-direction: column;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 30px;
-  border-style:double;
+  border-style: double;
   background-color: black;
   width: 20%;
   align-items: center;
 }
 
-.btn_fav{
-  background-color:#806F49;
+.btn_fav {
+  background-color: #806F49;
   border-radius: 7%;
   color: rgb(255, 255, 255);
-  padding: 2,5px 5px;
+  padding: 2, 5px 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
   font-weight: 800;
-  margin-bottom:4%;
+  margin-bottom: 4%;
   transition-duration: 0.4s;
-  border-color:#806F49;
+  border-color: #806F49;
   border-width: 3px;
   font-weight: 600;
   margin: 3px;
 }
-.btn_fav:hover{
+
+.btn_fav:hover {
   background-color: #806F49;
-  font-weight:900;
+  font-weight: 900;
   color: rgb(255, 255, 255);
 }
 
-.btn_vermas{
-  background-color:#4F8050;
+.btn_vermas {
+  background-color: #4F8050;
   border-radius: 7%;
   color: rgb(255, 255, 255);
-  padding: 2,5px 5px;
+  padding: 2, 5px 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 30px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  margin-bottom:4%;
+  margin-bottom: 4%;
   transition-duration: 0.4s;
-  border-color:#4F8050;
+  border-color: #4F8050;
   margin: 5px;
   border-width: 7px;
 }
-.btn_vermas:hover{
-  background-color:#4F8050;
-  font-weight:700;
+
+.btn_vermas:hover {
+  background-color: #4F8050;
+  font-weight: 700;
   color: rgb(255, 255, 255);
 }
 
-.btn_borrar{
-  background-color:#806270;
+.btn_borrar {
+  background-color: #806270;
   border-radius: 7%;
   color: white;
-  padding: 2,5px 5px;
+  padding: 2, 5px 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
-  margin-bottom:4%;
+  margin-bottom: 4%;
   transition-duration: 0.4s;
-  border-color:#806270;
+  border-color: #806270;
   margin: 3px;
   border-width: 3px;
   font-weight: 600;
 }
-.btn_borrar:hover{
-  background-color:#806270;
-  font-weight:900;
+
+.btn_borrar:hover {
+  background-color: #806270;
+  font-weight: 900;
   color: rgb(255, 255, 255);
 }
 
-.btn_detalle{
-  background-color:#635C80;
+.btn_detalle {
+  background-color: #635C80;
   border-radius: 7%;
   color: white;
-  padding: 2,5px 5px;
+  padding: 2, 5px 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
-  margin-bottom:4%;
+  margin-bottom: 4%;
   transition-duration: 0.4s;
-  border-color:#635C80;
+  border-color: #635C80;
   margin: 3px;
   border-width: 3px;
   font-weight: 600;
 }
-.btn_detalle:hover{
 
-  background-color:#635C80;
-  font-weight:900;
+.btn_detalle:hover {
+
+  background-color: #635C80;
+  font-weight: 900;
   color: rgb(255, 255, 255);
 }
 
 .nombre {
-text-align: center;
-font-family:Impact;
-color: white;
+  text-align: center;
+  font-family: Impact;
+  color: white;
 
 }
 
 .img_card {
   margin-top: 3%;
-  border-style:solid;
+  border-style: solid;
   width: 95%;
   margin-bottom: 6%;
   border-radius: 5%;
 }
 
 
-.nombre{
+.nombre {
   align-self: left;
 }
-
-

@@ -11,20 +11,20 @@ const Buscador = () => {
 
   function handleOnSubmit(event) {
     event.preventDefault()
-    if (buscar===""){
+    if (buscar === "") {
       return
     }
-    if (buscar.includes(" ")){
+    if (buscar.includes(" ")) {
       alert("Todavia no se pueden buscar palabras con espacios")
       return
     }
     alert(buscar)
-    history.push("/Search/"+buscar)
+    history.push("/Search/" + buscar)
 
   }
   return (
     <div style={{ display: "flex" }}>
-      <form className='form_buscar' onSubmit={handleOnSubmit} style={{alignItems:"flex-end"}}>
+      <form className='form_buscar' onSubmit={handleOnSubmit} style={{ alignItems: "flex-end" }}>
         <label className="label_buscar">Buscar</label>
         <input
           onChange={handleOnChange}

@@ -17,12 +17,12 @@ function App() {
       <Header titulo="Cuevana Salteña" subtitulo="La mejor plataforma de streaming del milenio" />
       <Switch>
         <Route path="/" exact> <Home /> </Route>
-        <Route path="/Favoritos"> <Favoritos/> </Route>
-        <Route path="/contenidos/Detalle/:contenidoId"><Detalle/></Route>
-        <Route path="/VerTodas/:categoria"> <VerTodas/> </Route>
-        <Route path="/Search/:consulta"> <Search/> </Route>
-        <Route path="*"> < NotFound/> </Route>
-        
+        <Route path="/Favoritos"> <Favoritos /> </Route>
+        <Route path="/contenidos/Detalle/:contenidoId"><Detalle /></Route>
+        <Route path="/VerTodas/:categoria"> <VerTodas /> </Route>
+        <Route path="/Search/:consulta"> <Search /> </Route>
+        <Route path="*"> < NotFound /> </Route>
+
       </Switch>
       <Footer />
     </>

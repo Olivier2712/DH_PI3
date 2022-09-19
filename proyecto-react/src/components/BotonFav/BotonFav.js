@@ -7,10 +7,10 @@ function BotonFav(props) {
 
   return (
 
-      <div className='botones'>
-        <button className="btn_fav" onClick={() => { props.favorito(props.contenido) }} >Favoritos</button>
-      </div>
-    
+    <div className='botones'>
+      <button className="btn_fav" onClick={() => { props.favorito(props.contenido) }} >Favoritos</button>
+    </div>
+
   )
 }
 

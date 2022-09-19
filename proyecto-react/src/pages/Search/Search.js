@@ -55,7 +55,7 @@ class Search extends React.Component {
                     <div className='card-container_peli' style={{ backgroundColor: "lightcyan" }}>
                         <h1 style={{ width: "80%", paddingLeft: "30%", fontFamily: 'monospace' }}> S E A R C H  </h1>
 
-                        { 
+                        {
                             this.state.estaCargado ? (
                                 this.state.contenidos.map(contenido => (
                                     <Card
