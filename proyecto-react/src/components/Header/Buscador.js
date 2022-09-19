@@ -24,7 +24,7 @@ const Buscador = () => {
   }
   return (
     <div style={{ display: "flex" }}>
-      <form className='form_buscar' onSubmit={handleOnSubmit}>
+      <form className='form_buscar' onSubmit={handleOnSubmit} style={{alignItems:"flex-end"}}>
         <label className="label_buscar">Buscar</label>
         <input
           onChange={handleOnChange}

@@ -22,7 +22,7 @@ class Favoritos extends Component {
 
   render() {
     return (
-      <div className='card-container' style={{display:"flex", flexDirection:"row"}}>
+      <div className='card-container' style={{display:"flex", flexDirection:"row", backgroundColor:"#556380"}}>
         {this.state.favoritos.map( item => (
             <Card 
                 key={item.id}

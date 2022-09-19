@@ -120,12 +120,12 @@ class Home extends Component {
 
   render() {
     return (
-      <section className='contenido_desplegado' style={{display:"flex", flexDirection:"column", width:"100%"}} >
-        <div className='contenedor_titulo_y_boton' style={{widht:"100%", display:"flex", backgroundColor:"lightcyan"}}>
-        <h1 style={{width:"80%", paddingLeft:"30%", fontFamily:'monospace'}}>P E L I C U L A S </h1> 
+      <section className='contenido_desplegado' style={{display:"flex", flexDirection:"column", width:"100%", backgroundColor:"#556380"}} >
+        <div className='contenedor_titulo_y_boton' style={{widht:"100%", display:"flex", backgroundColor:"#556380", marginTop:"5%"}}>
+        <h1 style={{width:"80%", paddingLeft:"30%", fontFamily:'impact', color:"white"}}>P E L I C U L A S </h1> 
         <Link className="btn_vermas" to={"/VerTodas/"+categoria.MOVIE} style={{widht:"20%"}}>Ver todas</Link>
         </div>
-        <div className='card-container_peli' style={{ backgroundColor: "lightcyan", width:"100%", display:"flex"}}>
+        <div className='card-container_peli' style={{ backgroundColor: "#556380", width:"100%", display:"flex", marginBottom:"5%", display:"flex", flexDirection:"row", flexWrap:"nowrap", justifyContent:"space-between", alignItems:"center"}}>
           {
             this.state.estaCargado ? (
               this.state.contenidos.map(contenido => (
@@ -141,11 +141,11 @@ class Home extends Component {
             )
           }
         </div>
-        <div className='contenedor_titulo_y_boton' style={{widht:"100%", display:"flex", backgroundColor:"lightcyan"}}>
-        <h1 style={{width:"80%", paddingLeft:"40%", fontFamily:'monospace'}}>S E R I E S</h1>
+        <div className='contenedor_titulo_y_boton' style={{widht:"100%", display:"flex", backgroundColor:"#556380"}}>
+        <h1 style={{width:"80%", paddingLeft:"30%", fontFamily:'impact',color:"white"}}>S E R I E S</h1>
         <Link className="btn_vermas" to={"/VerTodas/"+categoria.TV} style={{widht:"20%"}}>Ver todas</Link>
         </div>
-        <div className='card-container_serie' style={{ backgroundColor: "lightcyan" }}>
+        <div className='card-container_serie' style={{ backgroundColor: "#556380", display:"flex", flexDirection:"row", flexWrap:"nowrap", justifyContent:"space-between", alignItems:"center" }}>
         
           {
             this.state.estaCargado ? (

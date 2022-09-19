@@ -30,12 +30,12 @@ function Card(props) {
         <div className="accordion" id="accordionExample">
           <div className="accordion-item" style={{marginRight:"10px"}}>
             <h2 className="accordion-header" id="headingOne">
-              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={"#"+collapseId} aria-expanded="true" aria-controls="collapseOne" style={{backgroundColor:"#54df0e", color:"white", fontSize:"large", fontWeight:"bold"}}>
+              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={"#"+collapseId} aria-expanded="true" aria-controls="collapseOne" style={{backgroundColor:"#495B80", color:"white", fontSize:"large", fontWeight:"bold"}}>
                 Sinopsis
               </button>
             </h2>
             <div id={collapseId} className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div className="accordion-body" style={{background:"black", color:"white", fontWeight:"bold"}}>
+              <div className="accordion-body" style={{background:"#495B80", color:"white", fontWeight:"bold"}}>
               {overview}
               </div>
             </div>
