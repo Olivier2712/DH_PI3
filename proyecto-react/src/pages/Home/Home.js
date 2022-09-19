@@ -50,20 +50,6 @@ class Home extends Component {
       })
   }
 
-  agregarMas() {
-    // Logica para agregar mas contenidos
-    const url = this.state.nexturl;
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        this.setState({
-          nexturl: data.info.next,
-          contenidos: this.state.contenidos.concat(data.results)
-        })
-          .catch(err => console.log(err))
-      })
-  }
 
   filtrarcontenidos(filtro) {
 
