@@ -7,7 +7,7 @@ import Loader from '../../components/Loader/Loader';
 class VerTodas extends React.Component{
     constructor(props){
         super(props)
-        this.state = {contenidos:[], estaCargado: false}
+        this.state = {contenidos:[], estaCargado: false, masPopulares:true}
         if(this.props.match.categoria){
             const categoriaPagina = this.props.match.categoria
             switch(categoriaPagina){
@@ -17,6 +17,7 @@ class VerTodas extends React.Component{
             }
         }
         this.titulo = this.props.match.params.categoria && this.props.match.params.categoria === categoria.MOVIE?"Peliculas": "Series"
+        this.handleChange_masPopulares= this.handleChange_masPopulares.bind(this)
     }
     
     componentDidMount(){
@@ -37,11 +38,11 @@ class VerTodas extends React.Component{
     }
 
     filtrarcontenidos(filtro) {
+      const categoriaPagina = this.props.match.params.categoria
+      const urlMasPopular = `https://api.themoviedb.org/3/${categoriaPagina}/popular?api_key=c0945689b0a582e110971301d6ea8be2&language=es`
+      const urlComun = `https://api.themoviedb.org/3/${categoriaPagina}/top_rated?api_key=c0945689b0a582e110971301d6ea8be2&language=es`
+      const url = filtro === false ? urlMasPopular : urlComun
 
-
-
-
-        const url = `https://rickandmortyapi.com/api/character/?name=${filtro}`
         fetch(url)
           .then((res) => res.json())
           .then(datos => {
@@ -50,16 +51,18 @@ class VerTodas extends React.Component{
     
           })
           .catch(err => console.log(err))
+          // alert(this.state.masPopulares) 
+          // console.log(this.state)
       }
     
-      handleChange(e) {
-        this.setState({
-          filterBy: e.target.value
-        }, () => {
-          this.filtrarcontenidos(this.state.filterBy)
-        })
-      }
-    
+      handleChange_masPopulares(e) {
+        this.setState({ masPopulares: !this.state.masPopulares }, this.filtrarcontenidos(this.state.masPopulares))
+        console.log(this.state.masPopulares)
+        }
+
+
+
+
       borrarTarjeta(id) {
         const resto = this.state.contenidos.filter(contenido => contenido.id !== id)
         this.setState({
@@ -93,6 +96,10 @@ class VerTodas extends React.Component{
         <div className='card-container_peli' style={{ backgroundColor: "lightcyan" }}>
         <h1 style={{width:"80%", paddingLeft:"30%", fontFamily:'monospace'}}>{this.titulo}</h1> 
         <Link className="btn_vermas" to={"/VerTodas/"+categoria.MOVIE}>Ver todas</Link>
+        <form className="form_vermas">
+          <label> Mas populares </label>
+          <input type= "checkbox" name="masPopulares" onChange={this.handleChange_masPopulares} checked={this.state.masPopulares}/>
+        </form>
           {
             this.state.estaCargado ? (
               this.state.contenidos.map(contenido => (
